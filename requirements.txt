@@ -1,4 +1,4 @@
-Werkzeug==2.2.2
+Werkzeug==3.0.6
 flask==2.0.2
 requests>=2.26.0
 pykew>=0.1.3
