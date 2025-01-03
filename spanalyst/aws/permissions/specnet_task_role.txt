@@ -1,0 +1,24 @@
+Create the specnet_task_role with the following policies:
+
+* specnet_ec2_policy
+* specnet_lambda_policy
+* specnet_s3_policy
+* SecretsManagerReadWrite
+
+Then edit the Trust relationships for S3 and EC2 services:
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"Service": [
+				    "s3.amazonaws.com",
+				    "ec2.amazonaws.com"
+				    ]
+			},
+			"Action": "sts:AssumeRole"
+		}
+	]
+}

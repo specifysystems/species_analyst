@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GetPublicData",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:ListMultipartUploadParts",
+                "s3:ListBucket",
+                "s3:ListBucketMultipartUploads"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "RWBisonData",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucket*",
+                "s3:ListBucket*",
+                "s3:GetBucketAcl",
+                "s3:GetBucketCors",
+                "s3:ListAllMyBuckets",
+                "s3:ListBucketMultipartUploads",
+                "s3:PutBucketAcl",
+                "s3:PutBucketCors",
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:GetEncryptionConfiguration",
+                "s3:ListMultipartUploadParts",
+                "s3:AbortMultipartUpload",
+                "s3-object-lambda:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::specnet-321942852011-us-east-1",
+                "arn:aws:s3:::specnet-321942852011-us-east-1/*",
+                "arn:aws:s3:::specnet-321942852011-us-east-1/input/*",
+                "arn:aws:s3:::specnet-321942852011-us-east-1/output/*",
+                "arn:aws:s3:::specnet-321942852011-us-east-1/summary/*",
+                "arn:aws:s3:::specnet-321942852011-us-east-1/log/*"
+            ]
+        }
+    ]
+}

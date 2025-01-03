@@ -1,0 +1,40 @@
+Create the specnet_workflow_role with the following policies:
+
+* specnet_automation_policy
+* specnet_ec2_policy
+* specnet_lambda_policy
+* specnet_s3_policy
+* specnet_passrole_policy
+* specnet_redshiftdata_policy
+
+Then edit the Trust relationships for services and roles:
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ServiceAssumeRole",
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole"
+            "Principal": {
+                "Service": [
+                    "ec2.amazonaws.com",
+                    "lambda.amazonaws.com",
+                    "scheduler.amazonaws.com",
+                    "redshift.amazonaws.com"
+                ]
+            },
+        },
+        {
+            "Sid": "RoleAssumeRole",
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole"
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::321942852011:role/specnet_task_role",
+                    "arn:aws:iam::321942852011:role/specnet_workflow_role"
+                ]
+            },
+        }
+    ]
+}

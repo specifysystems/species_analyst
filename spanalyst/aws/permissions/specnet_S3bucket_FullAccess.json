@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:*",
+        "s3:ListBucket*",
+        "s3:GetBucket*",
+        "s3:GetObject",
+        "s3-object-lambda:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::specnet-us-east-1",
+        "arn:aws:s3:::specnet-us-east-1/*",
+        "arn:aws:s3:::specnet-us-east-1/summary/*",
+        "arn:aws:s3:::specnet-us-east-1/log/*"
+      ]
+    }
+  ]
+}

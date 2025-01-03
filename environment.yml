@@ -1,0 +1,7 @@
+name: sp_network
+channels:
+  - conda-forge
+dependencies:
+  - sphinx-rtd-theme
+    sphinx-autoapi
+    myst-parser

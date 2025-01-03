@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RolePassRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": [
+                "arn:aws:iam::321942852011:role/specnet_task_role",
+                "arn:aws:iam::321942852011:role/specnet_workflow_role"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "WorkflowAutomation",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:SendCommand",
+                "iam:PassRole",
+                "ssm:SendAutomationSignal",
+                "ssm:GetParameters"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*",
+                "arn:aws:ssm:*:321942852011:document/*",
+                "arn:aws:ssm:*:321942852011:automation-execution/*",
+                "arn:aws:ssm:*:321942852011:parameter/*",
+                "arn:aws:ssm:*:321942852011:managed-instance/*",
+                "arn:aws:ec2:*:321942852011:instance/*",
+                "arn:aws:iam::321942852011:role/service-role/specnet_workflow_role",
+                "arn:aws:iam::321942852011:role/specnet_task_role"
+            ]
+        }
+    ]
+}
